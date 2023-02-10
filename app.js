@@ -20,7 +20,7 @@ closeModal.addEventListener('click', toggleModal);
 modalOutside.addEventListener('click', toggleModal);
 addButton.addEventListener('click', updateWebsiteUrl);
 addButton.addEventListener('click', updateWebsiteName);
-addButton.addEventListener('click', loadBookmark);
+addButton.addEventListener('click', createBookmark);
 addButton.addEventListener('click', pushIntoBookmarks);
 addButton.addEventListener('click', storeBookmarksinLocalStorage);
 addButton.addEventListener('click', resetForm);
@@ -91,17 +91,18 @@ function storeBookmarksinLocalStorage(){
 // load Bookmarks from local storage onLoad
 function fetchBookmarks(){
     if(localStorage.getItem('bookmarks')){
-        bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+        bookmarks = JSON.parse(localStorage.getItem('bookmarks'))
         
+        
+    } else{
         bookmarks = [
             {
                 name: 'Github',
                 adresse: 'www.github.com',
             },
         ];
-        
-        
-    } 
+        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    }
     }
     fetchBookmarks()
 
@@ -137,7 +138,7 @@ nameWrapper.append(newFavIcon);
 nameWrapper.append(newLink);
 })};
 
-// loadBookmark();
+loadBookmark();
 
 function deleteBookmark(websiteName){
     bookmarks.forEach((bookmark, i) =>{
@@ -147,6 +148,7 @@ function deleteBookmark(websiteName){
         }
     })
     storeBookmarksinLocalStorage()
+    fetchBookmarks()
     loadBookmark()
 };
 
