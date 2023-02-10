@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://s2.googleusercontent.com/s2/favicons?domain=www.google.com">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/a0c92bab2e.css" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Bookmark App</title> 
+</head>
+<body>
+   <div class="wrapper">
+
+   
+    <h1 class="header" id="header">Add Your Bookmark</h1>
+
+    <div class="bookingsContainer" id="bookingsContainer">
+        <!-- <div class="item">
+            <i class="fa-solid fa-xmark"></i>
+            <div class="name">
+                <img id="bookmarkImg" src="https://s2.googleusercontent.com/s2/favicons?domain=www.google.com">
+                <a id="bookmarklink" href="" target="_blank">Google</a>
+            </div>
+        </div>
+        <div class="item" id="item">
+            <i class="fa-solid fa-xmark"></i>
+            <div class="name">
+                <img src="https://s2.googleusercontent.com/s2/favicons?domain=www.google.com">
+                <a href="" target="_blank">Google</a>
+            </div>
+        </div>
+        <div class="item">
+            <i class="fa-solid fa-xmark"></i>
+            <div class="name" id="nameWrappers">
+                <img src="https://s2.googleusercontent.com/s2/favicons?domain=www.google.com">
+                <a href="" target="_blank">Google</a>
+            </div>
+        </div> -->
+    </div>
+    
+</div>
+
+
+
+<div class="modal-container show-modal active" id="modal">
+    <div class="modal-outside" id="modalOutside"></div>
+    <div class="modal">
+        <i class="fa-solid fa-xmark close-icon" id="closeModal"></i>
+        <div class="modal-header">
+            <h3>Add Bookmard</h3>
+        </div>
+        <div class="modal-content">
+            <form action="submit" id="bookmark-form">
+                <div class="form-content">
+                    <label for="website-name">Website Name</label>
+                    <input type="text" name="" id="website-name">
+
+                </div>
+                <div class="form-content">
+                    <label for="website-url">Website Url</label>
+                    <input type="text" name="" id="website-url" placeholder="www.website.com">
+
+                </div>
+            </form>
+        </div>
+        <button id="add">Add</button>
+    </div>
+</div>
+</div>
+    <script src="https://kit.fontawesome.com/a0c92bab2e.js" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+</html>

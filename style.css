@@ -1,0 +1,224 @@
+:root{
+    --primary: #F46036;
+    --radius: 10px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Nunito';
+    margin-top: 50px;
+    background-color: #FFCAAF;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%230e6d25' fill-opacity='0.2' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+   
+}
+
+.wrapper{
+    margin: 0 80px;
+}
+.header{
+    color: var(--primary);
+    font-family: 'Nunito';
+    font-size: 30px;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 10px;
+    border-radius: var(--radius);
+    text-transform: uppercase;
+    color: var(--primary);
+    margin: 20px auto 80px;
+    width: 50%;
+    text-align: center;
+    
+}
+
+a{
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+a:link,
+a:visited{
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover,
+a:active{
+    text-decoration: underline;
+}
+
+.header:hover{
+    cursor: pointer;
+    opacity: .8;
+}
+
+.bookingsContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item{
+    background: rgba(255, 255, 255, 0.6);
+    color: var(--primary);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    min-width: 130px;  
+}
+
+item:hover{
+    cursor: pointer;
+    opacity: .8;
+}
+
+.name img{
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+    vertical-align: sub;
+}
+
+.fa-solid{
+    float: right;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.name{
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.modal-container{
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    
+    
+}
+
+.show-modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.active{
+    display: none;
+}
+
+label{
+    color: var(--primary);
+}
+
+.modal{
+    background-color: whitesmoke;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+    max-width: 95%;
+    width: 500px;
+    animation: modalOpen 1s;
+    padding-bottom: 20px;  
+}
+
+.close-icon{
+    float: right;
+    color: white;
+    font-size: 20px;
+    position: relative;
+    top: 10px;
+    right: 13px;
+    cursor: pointer;
+}
+
+.modal-header{
+    background-color: var(--primary);
+    color: white;
+    margin-bottom: 10px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+.form-content{
+    padding-bottom: 10px;
+    background-color: whitesmoke;
+    padding-left: 20px;
+    /* display: flex;
+    flex-direction: column;
+    text-align: center; */
+  
+}
+ .form-content input{
+    width: 90%;
+    margin: 5px auto 0;
+    height: 30px;
+    
+ }
+
+ h3{
+    padding-left: 20px;
+ }
+
+ button{
+    width: 140px;
+    height: 30px;
+    position: relative;
+    margin-left: 20px;
+    margin-top: 10px;
+    border-radius: var(--radius);
+    border: solid 1px var(--primary);
+    color: var(--primary);
+    background: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+ }
+
+ .modal-outside{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+ }
+
+
+
+@keyframes modalOpen {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+    
+}
+
+@media  screen and (max-width: 600px) {
+    .bookingsContainer{
+        flex-direction: column;
+    }
+    .header{
+        font-size: 25px;
+        width: 90%;
+    }
+    .wrapper{
+        margin: 0 10px;
+    }
+}
