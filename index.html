@@ -54,20 +54,20 @@
             <h3>Add Bookmard</h3>
         </div>
         <div class="modal-content">
-            <form action="submit" id="bookmark-form">
+            <form action="" id="bookmark-form">
                 <div class="form-content">
                     <label for="website-name">Website Name</label>
-                    <input type="text" name="" id="website-name">
+                    <input type="text" name="" id="website-name" required minlength="3" title="Name of the Website">
 
                 </div>
                 <div class="form-content">
                     <label for="website-url">Website Url</label>
-                    <input type="text" name="" id="website-url" placeholder="www.website.com">
+                    <input type="text" name="" id="website-url" placeholder="www.website.com" required title="www.adresse.com" pattern="www\.[A-Za-z0-9-_]+\.[A-Za-z0-9-_]+[A-Za-z0-9-_.\/]+" >
 
                 </div>
+                <button type="submit" id="add">Add</button>
             </form>
         </div>
-        <button id="add">Add</button>
     </div>
 </div>
 </div>

@@ -43,7 +43,6 @@ a{
     text-decoration: none;
     color: var(--primary);
     font-weight: bold;
-    text-transform: uppercase;
     font-size: 20px;
 }
 
@@ -197,6 +196,18 @@ label{
     bottom: 0;
     z-index: -1;
  }
+
+ input:focus{
+    outline: none;
+ }
+
+ input:invalid {
+    border: 1px solid var(--primary);
+  }
+  
+  input:valid {
+    border: 1px solid lightgreen;
+  }
 
 
 

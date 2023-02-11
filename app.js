@@ -1,4 +1,5 @@
 const addBookmark = document.getElementById('header');
+const form = document.getElementById('bookmark-form');
 const modal = document.getElementById('modal');
 const closeModal = document.getElementById('closeModal');
 let addButton = document.getElementById('add');
@@ -16,12 +17,13 @@ let bookmarks = [];
 addBookmark.addEventListener('click', toggleModal);
 closeModal.addEventListener('click', toggleModal);
 modalOutside.addEventListener('click', toggleModal);
-addButton.addEventListener('click', updateWebsiteUrl);
-addButton.addEventListener('click', updateWebsiteName);
-addButton.addEventListener('click', pushIntoBookmarks);
-addButton.addEventListener('click', loadBookmark);
-addButton.addEventListener('click', storeBookmarksinLocalStorage);
-addButton.addEventListener('click', resetForm);
+form.addEventListener('submit', preventDefault);
+form.addEventListener('submit', updateWebsiteUrl);
+form.addEventListener('submit', updateWebsiteName);
+form.addEventListener('submit', pushIntoBookmarks);
+form.addEventListener('submit', loadBookmark);
+form.addEventListener('submit', storeBookmarksinLocalStorage);
+form.addEventListener('submit', resetForm);
 
 
 // reset form
@@ -32,6 +34,7 @@ function resetForm() {
 // function to open the modal
 function toggleModal() {
     modal.classList.toggle('active');
+    
 }
 
 // function that updates websiteUrl
@@ -46,11 +49,12 @@ function updateWebsiteName() {
 
 // function to push bookmark info in to array
 function pushIntoBookmarks() {
-    let bookmark = {
-        name: getWebsiteName.value,
-        adresse: getWebsiteUrl.value
-    }
-    bookmarks.push(bookmark);
+        let bookmark = {
+            name: getWebsiteName.value,
+            adresse: getWebsiteUrl.value
+        }
+        bookmarks.push(bookmark);
+   
 }
 
 // stores bookmarks in local storage
@@ -116,3 +120,8 @@ function deleteBookmark(websiteName) {
     storeBookmarksinLocalStorage()
     loadBookmark()
 };
+
+//function that prefents default on form
+function preventDefault(e){
+    e.preventDefault();
+}
